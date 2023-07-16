@@ -84,8 +84,8 @@ function flexline_theme_customizer_css()
     } 
 
     /* use above set values into inline styles */
-    $css .= $font . 'a:not(.nav a),.current_page_item a,.current_page_ancestor a{color: '. sanitize_hex_color($ankr_colr) . '}.nav li.menu-item-has-children,.nav li.menu-item-has-children:after{border-color: '. sanitize_hex_color($ankr_colr) . '}
-    .header-logo img{height: ' . flexline_sanitize_integer( $logo ) . 'px;}.header,.footer,.nav a{background: ' . sanitize_hex_color( $bkgs_colr ) . '}.current_page_item a,.current_page_ancestor a{background: transparent;}';
+    $css .= $font . 'a:not(.nav a),.current_page_item a,.current_page_ancestor a, h2:not(.widget-title){color: '. sanitize_hex_color($ankr_colr) . '}.nav li.menu-item-has-children,.nav li.menu-item-has-children:after{border-color: '. sanitize_hex_color($ankr_colr) . '}
+    .header-logo img{height: ' . flexline_sanitize_integer( $logo ) . 'px;}.header,.footer,.nav a{background: ' . sanitize_hex_color( $bkgs_colr ) . '}';
     
     wp_register_style( 'flexline-inline-customizer', true );
 	wp_enqueue_style( 'flexline-inline-customizer' );
