@@ -28,7 +28,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
 body{margin:0}
 article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary,ul{
-  display: initial
+  display: inherit;
 }
 code,kbd,pre,samp{
   font-family:monospace,monospace;font-size:1em
@@ -152,7 +152,7 @@ body {
 
   overflow-x: hidden;
 }
-.main, .aside-1, .aside-2, .header-wrap, .heaer-1, .header-2, .header-logo,
+.main, .aside-1, .aside-2, .header-wrap, .header-1, .header-2, .header-logo,
 .footer, .nav{
   -ms-box-orient: horizontal;
   display: -webkit-box;
@@ -169,7 +169,6 @@ body {
   display: flex;  
   flex: 1;
   flex-flow: row wrap;
-  font-weight: 400;
   text-align: initial; 
 }
 
@@ -338,9 +337,7 @@ margin-left:0;
 .current_page_ancestor a{
   text-shadow: 1px 0 1px #aaa
 }
-.current_page_item a,.current_page_ancestor a{
-  background: transparent;
-}
+
 /* ************************************************************ 3 - Elements 
 */
 .screen-reader-text {
@@ -476,6 +473,14 @@ ul li {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
+.blog .inner-content{
+  margin-top: 1.582em;
+}
+.blog .excerpt-heading .post-title {
+  margin-bottom: -15px;
+  height: auto;
+  display: flex;
+}
 .readon{
   border: thin solid #eee;
   border-radius: 7px;
@@ -495,6 +500,22 @@ ul li {
   line-height: 1;
   padding-left: 8px;
   padding-right: 8px;
+}
+.aside-1 .search-field,
+.aside-2 .search-field{
+  max-width: 70%;
+}
+.aside-1 [type="submit"],
+.aside-2 [type="submit"]{
+  padding: 0.2185rem;
+  border: 1px solid #ddd;
+  text-decoration: none;
+  color: #454545;
+  line-height: 1;
+  display: inline-flex;
+  height: 1em;
+  text-align: center;
+  box-sizing:content-box;
 }
 #comment{
   width: 90%;
