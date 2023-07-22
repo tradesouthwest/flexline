@@ -21,11 +21,16 @@ get_header(); ?>
         itemtype="https://schema.org/Article">
         <div class="inner-content">
         <header>
-        <?php the_title('<h2 class="page-title">', '</h2>'); ?>
+        
+            <?php the_title('<h2 class="page-title">', '</h2>'); ?>
+
         </header>
             <div class="page-content">
-            <?php do_action( 'flexline_render_attachment' ); ?>
-                <?php the_content(); ?>
+      
+                <?php do_action( 'flexline_render_attachment' ); ?>
+                <div class="inner-content">
+                    <?php the_content(); ?>
+</div>
             </div>
         </div>
     </article>

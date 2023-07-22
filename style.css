@@ -56,8 +56,16 @@ sub {
 sup {
   top: -0.5em;
 }
+.wp-caption img,
 img {
-  border-style: none;
+  display:flex;
+  max-width: 100%;
+}
+.wp-caption.alignnone,
+.wp-caption.alignleft,
+.wp-caption.alignright,
+.wp-caption.aligncenter {
+  max-width: calc(100% - 10vw)
 }
 button,
 input,
@@ -76,12 +84,6 @@ input { /* 1 */
 button,
 select { /* 1 */
   text-transform: none;
-}
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  appearance: button;
 }
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
@@ -169,7 +171,7 @@ body {
   display: flex;  
   flex: 1;
   flex-flow: row wrap;
-  text-align: initial; 
+
 }
 
 .wrapper > * {
@@ -255,6 +257,7 @@ h2.widget-title{
 p, .inner-content{
   line-height: 1.68;
 }
+
 
 /* ************************************************************ 2 - Navigation 
 */
@@ -532,6 +535,7 @@ ul li {
 .comment-respond{
   background: #f2f4f6;
   padding: 5px 10px;
+  margin-left: -3em
 }
 .comment-respond label{
   min-width: 80px;
@@ -550,6 +554,15 @@ textarea#comment,
 */
 
 @media all and (max-width: 766px) {
+  p {
+    word-break: break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
+    width: 95.36vw;
+  }
+  .single img{
+    max-width: calc( -2em + 100vw )
+  }
   .avoid-clicks {
     pointer-events: none;
   }
@@ -617,7 +630,9 @@ textarea#comment,
 }
 
 @media all and (min-width: 767px) {
-  .aside, .insdhdr { flex: 1 0 0; }
+  .aside, .insdhdr { 
+    flex: 1 0 0;
+  }
   .nav ul { flex-direction: row; }
 }
 
@@ -641,4 +656,11 @@ textarea#comment,
   .main, .header-logo    { order: 2; }
   .aside-2, .header-2 { order: 3; }
   .footer  { order: 4; }
+  .aside, .insdhdr { 
+    padding-left: 1em;
+  }
+
+  .single .inner-content{
+    max-width: 57vw
+  }
 } 
