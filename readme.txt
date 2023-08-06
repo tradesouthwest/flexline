@@ -29,4 +29,4 @@ Excerpts show in featured image area above post.
 3. Click on the 'Activate' button to use your new theme right away.
 4. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
-== Changlog ==
+== Changelog ==
