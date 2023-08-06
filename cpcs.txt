@@ -1,0 +1,125 @@
+FILE: /var/www/html/cp-plugin-review/flexline/functions.php
+--------------------------------------------------------------------------------
+FOUND 2 ERRORS AFFECTING 2 LINES
+--------------------------------------------------------------------------------
+ 316 | ERROR | All output should be run through an escaping function (see the
+     |       | Security sections in the WordPress Developer Handbooks), found
+     |       | '$htm'. (WordPress.Security.EscapeOutput.OutputNotEscaped)
+ 331 | ERROR | All output should be run through an escaping function (see the
+     |       | Security sections in the WordPress Developer Handbooks), found
+     |       | 'wp_trim_words'.
+     |       | (WordPress.Security.EscapeOutput.OutputNotEscaped)
+--------------------------------------------------------------------------------
+
+
+FILE: /var/www/html/cp-plugin-review/flexline/home.php
+--------------------------------------------------------------------------------
+FOUND 2 ERRORS AFFECTING 2 LINES
+--------------------------------------------------------------------------------
+ 21 | ERROR | [ ] All output should be run through an escaping function (see
+    |       |     the Security sections in the WordPress Developer Handbooks),
+    |       |     found 'get_the_post_thumbnail_url'.
+    |       |     (WordPress.Security.EscapeOutput.OutputNotEscaped)
+ 22 | ERROR | [x] Opening PHP tag must be on a line by itself
+    |       |     (Squiz.PHP.EmbeddedPhp.ContentAfterOpen)
+--------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+--------------------------------------------------------------------------------
+
+
+FILE: /var/www/html/cp-plugin-review/flexline/header.php
+--------------------------------------------------------------------------------
+FOUND 3 ERRORS AFFECTING 2 LINES
+--------------------------------------------------------------------------------
+ 23 | ERROR | All output should be run through an escaping function (like
+    |       | esc_html_e() or esc_attr_e()), found '_e'.
+    |       | (WordPress.Security.EscapeOutput.UnsafePrintingFunction)
+ 23 | ERROR | Mismatched text domain. Expected 'flexline' but got
+    |       | 'classicsixteen'. (WordPress.WP.I18n.TextDomainMismatch)
+ 55 | ERROR | All output should be run through an escaping function (see the
+    |       | Security sections in the WordPress Developer Handbooks), found
+    |       | 'get_bloginfo'.
+    |       | (WordPress.Security.EscapeOutput.OutputNotEscaped)
+--------------------------------------------------------------------------------
+
+
+FILE: /var/www/html/cp-plugin-review/flexline/index.php
+--------------------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+--------------------------------------------------------------------------------
+ 25 | ERROR | [x] Opening PHP tag must be on a line by itself
+    |       |     (Squiz.PHP.EmbeddedPhp.ContentAfterOpen)
+--------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+--------------------------------------------------------------------------------
+
+
+FILE: /var/www/html/cp-plugin-review/flexline/page.php
+--------------------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+--------------------------------------------------------------------------------
+ 22 | ERROR | [x] Opening PHP tag must be on a line by itself
+    |       |     (Squiz.PHP.EmbeddedPhp.ContentAfterOpen)
+--------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+--------------------------------------------------------------------------------
+
+
+FILE: /var/www/html/cp-plugin-review/flexline/archive.php
+--------------------------------------------------------------------------------
+FOUND 1 ERROR AFFECTING 1 LINE
+--------------------------------------------------------------------------------
+ 25 | ERROR | [x] Opening PHP tag must be on a line by itself
+    |       |     (Squiz.PHP.EmbeddedPhp.ContentAfterOpen)
+--------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+--------------------------------------------------------------------------------
+
+
+FILE: /var/www/html/cp-plugin-review/flexline/comments.php
+--------------------------------------------------------------------------------
+FOUND 17 ERRORS AFFECTING 14 LINES
+--------------------------------------------------------------------------------
+ 32 | ERROR | [x] Opening PHP tag must be on a line by itself
+    |       |     (Squiz.PHP.EmbeddedPhp.ContentAfterOpen)
+ 33 | ERROR | [ ] Mismatched text domain. Expected 'flexline' but got
+    |       |     "fastbreak". (WordPress.WP.I18n.TextDomainMismatch)
+ 34 | ERROR | [x] Opening PHP tag must be on a line by itself
+    |       |     (Squiz.PHP.EmbeddedPhp.ContentAfterOpen)
+ 35 | ERROR | [ ] Mismatched text domain. Expected 'flexline' but got
+    |       |     "fastbreak". (WordPress.WP.I18n.TextDomainMismatch)
+ 44 | ERROR | [x] Multi-line array item not aligned correctly; expected 8
+    |       |     spaces, but found 4
+    |       |     (WordPress.Arrays.ArrayIndentation.MultiLineArrayItemNotAligned)
+ 44 | ERROR | [ ] Mismatched text domain. Expected 'flexline' but got
+    |       |     'fastbreak'. (WordPress.WP.I18n.TextDomainMismatch)
+ 47 | ERROR | [x] Multi-line array item not aligned correctly; expected 8
+    |       |     spaces, but found 4
+    |       |     (WordPress.Arrays.ArrayIndentation.MultiLineArrayItemNotAligned)
+ 47 | ERROR | [ ] Mismatched text domain. Expected 'flexline' but got
+    |       |     'fastbreak'. (WordPress.WP.I18n.TextDomainMismatch)
+ 50 | ERROR | [x] Multi-line array item not aligned correctly; expected 8
+    |       |     spaces, but found 4
+    |       |     (WordPress.Arrays.ArrayIndentation.MultiLineArrayItemNotAligned)
+ 51 | ERROR | [ ] Mismatched text domain. Expected 'flexline' but got
+    |       |     'fastbreak'. (WordPress.WP.I18n.TextDomainMismatch)
+ 53 | ERROR | [ ] Mismatched text domain. Expected 'flexline' but got
+    |       |     'fastbreak'. (WordPress.WP.I18n.TextDomainMismatch)
+ 58 | ERROR | [x] Multi-line array item not aligned correctly; expected 8
+    |       |     spaces, but found 4
+    |       |     (WordPress.Arrays.ArrayIndentation.MultiLineArrayItemNotAligned)
+ 59 | ERROR | [ ] Mismatched text domain. Expected 'flexline' but got
+    |       |     'fastbreak'. (WordPress.WP.I18n.TextDomainMismatch)
+ 60 | ERROR | [ ] Mismatched text domain. Expected 'flexline' but got
+    |       |     'fastbreak'. (WordPress.WP.I18n.TextDomainMismatch)
+ 61 | ERROR | [ ] Mismatched text domain. Expected 'flexline' but got
+    |       |     'fastbreak'. (WordPress.WP.I18n.TextDomainMismatch)
+ 65 | ERROR | [x] Multi-line array item not aligned correctly; expected 12
+    |       |     spaces, but found 8
+    |       |     (WordPress.Arrays.ArrayIndentation.MultiLineArrayItemNotAligned)
+ 65 | ERROR | [ ] Mismatched text domain. Expected 'flexline' but got
+    |       |     'fastbreak'. (WordPress.WP.I18n.TextDomainMismatch)
+--------------------------------------------------------------------------------
+PHPCBF CAN FIX THE 7 MARKED SNIFF VIOLATIONS AUTOMATICALLY
+--------------------------------------------------------------------------------
+
