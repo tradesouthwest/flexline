@@ -182,7 +182,7 @@ function flexline_theme_enqueue_styles() {
 }
 
 
-/** #A5
+/** 
  * Registers an editor stylesheet for the theme.
  *
  * @since 1.0.0
@@ -316,11 +316,17 @@ function flexline_description_header_text(){
     echo $htm;
 }
 
+/** #A5
+ * Sets number of words for an exceprt
+ * @since 1.0.0
+ * @param $leng string Number of words per excerpt
+ * @return HTML 
+ */
 function flexline_adjustable_excerpts_length() {
 	$leng = 65;
 	echo wp_trim_words( get_the_content(), $leng, '
 		<a class="readon" href="' . get_the_permalink() . '" 
-	   	title="'. the_title_attribute() . '"><span class="read-on"> &hellip; </span></a>' 
+	   	title="'. esc_attr__( 'Read Full Article', 'flexline' ) . '"><span class="read-on"> &hellip; </span></a>' 
     ); 
 } 
 

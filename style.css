@@ -510,6 +510,13 @@ ul li {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
+.page-title{
+  padding-left: 10px;
+}
+.inner-content .inner-content{
+  padding-right: 15px;
+  padding-left: 10px;
+}
 .blog .inner-content{
   margin-top: 1.582em;
 }
