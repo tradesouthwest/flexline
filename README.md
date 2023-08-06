@@ -15,4 +15,4 @@ Excerpts show in featured image area above post.
 ## Demo 
 [Demo can be seen here](https://classicpress-themes.com/flexline/)
 
-![flexline theme](http://classicpress-themes.com/wp-content/uploads/2023/07/screenshot.png)
+![flexline theme](https://github.com/tradesouthwest/flexline/blob/main/screenshot.png)
