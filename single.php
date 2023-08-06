@@ -30,7 +30,10 @@ get_header(); ?>
                 <?php do_action( 'flexline_render_attachment' ); ?>
                 <div class="inner-content">
                     <?php the_content(); ?>
-</div>
+                </div>
+
+                <?php do_action( 'flexline_single_meta_footer' ); ?>
+
             </div>
         </div>
     </article>

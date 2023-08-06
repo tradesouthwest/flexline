@@ -28,7 +28,6 @@ get_header(); ?>
                 <?php the_content(); ?>
             </div>
         </div>
-        <hr>
     </article>
         <aside class="comments-aside">
                 

@@ -42,6 +42,10 @@ add_action( 'flexline_adjustable_excerpts', 'flexline_adjustable_excerpts_length
 add_action( 'flexline_render_attachment', 'flexline_render_attachment_link' );
 // A7
 add_action( 'flexline_description_header', 'flexline_description_header_text' );
+// A8 
+add_action( 'flexline_single_meta_footer', 'flexline_single_meta_footer_render' );
+// A9
+add_action( 'flexline_check_pagination', 'flexline_check_pagination_pre' );
 
 if ( ! function_exists( 'wp_body_open' ) ) {
     /**
@@ -318,4 +322,50 @@ function flexline_adjustable_excerpts_length() {
 		<a class="readon" href="' . get_the_permalink() . '" 
 	   	title="'. the_title_attribute() . '"><span class="read-on"> &hellip; </span></a>' 
     ); 
-}
+} 
+
+/** #A8
+ * Meta data for single posts
+ *
+ * @since 1.0
+ * @return HTML
+ */
+function flexline_single_meta_footer_render(){
+    ob_start();
+	?>
+    <aside class="after-content">
+		<p class="after-cats"><span><small><?php esc_html_e('By: ', 'flexline'); ?></span> <em><?php the_author(); ?></em></small>
+		| <span><small><?php esc_html_e('Categorized as: ', 'flexline'); ?></span> <em><?php the_category( ' &bull; ' ); ?></em></small>
+		| <span><small><?php esc_html_e('Keys: ', 'flexline'); ?></span> <em><?php the_tags( ' ' ); ?></em></small>
+		| <span><small><?php esc_html_e('Date: ', 'flexline'); ?></span> <em><?php the_date(); ?></em></small></p>
+		
+
+	</aside>
+	<?php 
+	echo wp_kses_post( force_balance_tags( ob_get_clean() ) );
+} 
+
+/** #A9
+ * Show prenav text if pagination
+ * 
+ * @since 1.0
+ * @param string $prev_link Boolean
+ * @param string $next_link Boolean
+ */
+function flexline_check_pagination_pre()
+{
+    $prev_link = get_previous_posts_link();
+	$next_link = get_next_posts_link();
+	
+	if ( $next_link ) { 
+
+	echo '<span class="prenav">' . esc_html__( 'More Pages', 'flexline' ) . '</span>';
+	} 
+	    elseif( $prev_link ) { 
+
+	echo '<span class="prenav">' . esc_html__( 'No more entries for this page.', 'flexline' ) . '</span>';
+	} 
+	else {
+		echo '';
+	}
+} 

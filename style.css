@@ -28,13 +28,15 @@ Use it to make something cool, have fun, and share what you've learned with othe
 html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
 body{margin:0}
 article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary,ul{
-  display: inherit;
+  display: block;
 }
 code,kbd,pre,samp{
-  font-family:monospace,monospace;font-size:1em
+  font-family:monospace,monospace;
+  font-size:1em
 }
 hr{
-  box-sizing:content-box;height:0;overflow:visible
+  height:0;
+  overflow:visible
 }
 b,
 strong {
@@ -165,7 +167,10 @@ body {
   display: flex;
   -webkit-justify-content: space-between; 
   justify-content: space-between; 
-  
+}
+.footer,
+.aside{
+  display: flex;
 }
 .wrapper {
   display: flex;  
@@ -183,6 +188,7 @@ body {
   background: #efefef;
   background: linear-gradient(#eaecee, #fff, #e9ecee);
   border: thin solid #eee;
+  display: flex;
 }
 .footer{
   flex-direction:column
@@ -190,7 +196,7 @@ body {
 .main {
   text-align: left;
   background: #fdfdfd;
-  
+  display: flex;
   flex: 3 0px;
   position:relative; 
   z-index: 1;
@@ -249,7 +255,7 @@ h2.widget-title{
 }
 
 .page-content.with-excerpt{
-  max-width: 60vw
+  max-width: 98.8992%
 }
 .with-excerpt .inner-content span a{
   text-decoration: none;
@@ -266,6 +272,7 @@ p, .inner-content{
   width: 100%;
   position:relative; 
   z-index: 999;
+  display: flex;
 }
 .nav ul,
 .nav li{
@@ -340,7 +347,29 @@ margin-left:0;
 .current_page_ancestor a{
   text-shadow: 1px 0 1px #aaa
 }
-
+.pagination-nav{
+  width: 100%;
+  min-height: 1em;
+  flex-direction: column;
+}
+.prevpst-nav,
+.nextpst-nav{
+  padding: 6px 12px;
+  margin: 0 1em;
+  font-size: larger;
+  font-weight: bold;
+  background: #f7f7f7;
+  box-shadow: 1px 2px 1px 0px #ccc;
+}
+.prevpst-nav:hover,
+.nextpst-nav:hover,
+.prevpst-nav:focus,
+.nextpst-nav:focus,
+.prevpst-nav:focus-within,
+.nextpst-nav:focus-within{
+  background: #cde;
+  border-bottom: thin dotted #000
+}
 /* ************************************************************ 3 - Elements 
 */
 .screen-reader-text {
@@ -407,10 +436,15 @@ h5 {font-size: 18px}
 h6 {font-size: 16px}
 
 hr {
-  height: 0;
-  border: 0;
-  border-top: 1px solid #eee;
-  margin: 20px 0;
+  border: thin solid lightgray;
+  background-color: #f7f7f7;
+  height: 1px;
+  width: 98%;
+  margin: 1rem auto;
+}
+hr:after{
+  display: table;
+  clear:both
 }
 p{
   margin-bottom: 9px;
@@ -520,8 +554,12 @@ ul li {
   text-align: center;
   box-sizing:content-box;
 }
+.comments-aside{
+  width: 92%;
+  margin: 0 auto;
+}
 #comment{
-  width: 90%;
+  width: 98.8992%;
   min-height: 6em
 }
 .comment-reply-title{
