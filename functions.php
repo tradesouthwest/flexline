@@ -319,11 +319,15 @@ function flexline_description_header_text(){
 /** #A5
  * Sets number of words for an exceprt
  * @since 1.0.0
+ * @uses theme_mod     `flexline_excerpt_leng`
  * @param $leng string Number of words per excerpt
  * @return HTML 
  */
 function flexline_adjustable_excerpts_length() {
-	$leng = 65;
+	// flexline_excerpt_leng
+	$leng = ( empty( get_theme_mod( 'flexline_excerpt_leng' ) ) ) ? '65' 
+		   : absint( get_theme_mod( 'flexline_excerpt_leng' ) );
+		   
 	echo wp_trim_words( get_the_content(), $leng, '
 		<a class="readon" href="' . get_the_permalink() . '" 
 	   	title="'. esc_attr__( 'Read Full Article', 'flexline' ) . '"><span class="read-on"> &hellip; </span></a>' 

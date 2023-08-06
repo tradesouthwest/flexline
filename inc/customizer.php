@@ -76,6 +76,19 @@ function flexline_register_theme_customizer_setup($wp_customize)
 		'description' => __( 'Add HTML to Header just above description.', 'flexline')
 	));
 
+	// Add setting & control for excerpt length
+    $wp_customize->add_setting( 'flexline_excerpt_leng', array(
+		'default' => '65',
+		'transport' => $transport
+	));
+	$wp_customize->add_control( 'flexline_excerpt_leng', array(
+		'label'   => 'Excerpt Length',
+		'section'  => 'flexline_general',
+		'settings'  => 'flexline_excerpt_leng',
+		'type'       => 'number',
+		'description' => __( 'Change number of words to show in an excerpt.', 'flexline')
+	));
+
 	/* Colors */
 	$wp_customize->add_setting(
 		'flexline_bkgrnds_color', array(
