@@ -297,11 +297,10 @@ require get_template_directory() . '/inc/options-output.php';
  * @return HTML
  */
 function flexline_description_header_text(){
-	$htm = '';
-    $desctext = ( empty( get_theme_mod( 'flexline_desctext' ) ) ) ? '' 
-                      : get_theme_mod( 'flexline_desctext' );
-    $htm .= '<div class="descript-text">' . wp_kses_post( $desctext ) . '</div>';
-    echo $htm;
+	
+    $desctext = ( empty( get_theme_mod( 'flexline_desctext' ) ) ) 
+	              ? '' : get_theme_mod( 'flexline_desctext' );
+    echo '<div class="descript-text">' . wp_kses_post( $desctext ) . '</div>';
 }
 
 /** #A5
