@@ -29,7 +29,9 @@ get_header(); ?>
       
                 <?php do_action( 'flexline_render_attachment' ); ?>
                 <div class="inner-content">
-                    <?php the_content(); ?>
+                    <?php 
+                    the_content(); wp_link_pages();
+                    ?>
                 </div>
 
                 <?php do_action( 'flexline_single_meta_footer' ); ?>

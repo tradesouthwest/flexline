@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flexline 1.0.1\n"
 "Report-Msgid-Bugs-To: https://support.tradesouthwest.com\n"
-"POT-Creation-Date: 2023-08-06 12:15-0700\n"
+"POT-Creation-Date: 2023-08-09 12:46-0700\n"
 "PO-Revision-Date: 2023-08-08 12:41-0700\n"
 "Last-Translator: \n"
 "Language-Team: Tradesouthwest\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: archive.php:42 home.php:58 index.php:42 page.php:43
+#: archive.php:41 home.php:56 index.php:41 page.php:44
 msgid "Can not find content. "
 msgstr ""
 
@@ -26,7 +26,7 @@ msgstr ""
 msgid "&laquo; Older Comments"
 msgstr ""
 
-#: comments.php:35
+#: comments.php:34
 msgid "Newer Comments &raquo;"
 msgstr ""
 
@@ -62,59 +62,59 @@ msgstr ""
 msgid "Your email address will not be published."
 msgstr ""
 
-#: functions.php:127
+#: functions.php:133
 msgid "Primary Main Menu"
 msgstr ""
 
-#: functions.php:128
+#: functions.php:134
 msgid "Top - No stacking"
 msgstr ""
 
-#: functions.php:228
+#: functions.php:216
 msgid "Sidebar One"
 msgstr ""
 
-#: functions.php:230 functions.php:242
+#: functions.php:218 functions.php:230
 msgid "Add widgets here to appear in your sidebar."
 msgstr ""
 
-#: functions.php:240
+#: functions.php:228
 msgid "Sidebar Two"
 msgstr ""
 
-#: functions.php:252
+#: functions.php:240
 msgid "Footer Section One"
 msgstr ""
 
-#: functions.php:254
+#: functions.php:242
 msgid "Appears at the bottom of the content on posts and pages."
 msgstr ""
 
-#: functions.php:333
+#: functions.php:321
 msgid "Read Full Article"
 msgstr ""
 
-#: functions.php:347
+#: functions.php:336
 msgid "By: "
 msgstr ""
 
-#: functions.php:348
+#: functions.php:337
 msgid "Categorized as: "
 msgstr ""
 
-#: functions.php:349
+#: functions.php:338
 msgid "Keys: "
 msgstr ""
 
-#: functions.php:350
+#: functions.php:339
 msgid "Date: "
 msgstr ""
 
-#: functions.php:372
+#: functions.php:361
 msgid "More Pages"
 msgstr ""
 
-#: functions.php:376
+#: functions.php:365
 msgid "No more entries for this page."
 msgstr ""
 
@@ -126,27 +126,31 @@ msgstr ""
 msgid "Flexline Theme Settings"
 msgstr ""
 
-#: inc/customizer.php:43
+#: inc/customizer.php:44
 msgid "Choose the font family type."
 msgstr ""
 
-#: inc/customizer.php:63
+#: inc/customizer.php:65
 msgid "Changes height of logo in header."
 msgstr ""
 
-#: inc/customizer.php:76
+#: inc/customizer.php:79
 msgid "Add HTML to Header just above description."
 msgstr ""
 
-#: inc/customizer.php:89
+#: inc/customizer.php:93
 msgid "Change number of words to show in an excerpt."
 msgstr ""
 
-#: inc/customizer.php:104
+#: inc/customizer.php:108
 msgid "Color of Background in Header Footer and Menu items"
 msgstr ""
 
-#: inc/customizer.php:121
+#: inc/customizer.php:124
+msgid "Color for General Text"
+msgstr ""
+
+#: inc/customizer.php:140
 msgid "Color for Links"
 msgstr ""
 
@@ -158,75 +162,75 @@ msgstr ""
 msgid "flexline Help"
 msgstr ""
 
-#: inc/options-output.php:104
+#: inc/options-output.php:107
 msgid "flexline Theme Help"
 msgstr ""
 
-#: inc/options-output.php:110
+#: inc/options-output.php:113
 msgid "Customize Theme Settings"
 msgstr ""
 
-#: inc/options-output.php:114
+#: inc/options-output.php:117
 msgid "Theme Help"
 msgstr ""
 
-#: inc/options-output.php:115
+#: inc/options-output.php:118
 msgid ""
 "For support issues please use the Issues panel on our Github "
 "account for this theme."
 msgstr ""
 
-#: inc/options-output.php:117
+#: inc/options-output.php:120
 msgid "theme support"
 msgstr ""
 
-#: inc/options-output.php:118
+#: inc/options-output.php:121
 msgid "Open Issue for Support"
 msgstr ""
 
-#: inc/options-output.php:119
+#: inc/options-output.php:122
 msgid "[opens in new window]"
 msgstr ""
 
-#: inc/options-output.php:120
+#: inc/options-output.php:123
 msgid "Tips"
 msgstr ""
 
-#: inc/options-output.php:122
+#: inc/options-output.php:125
 msgid ""
 "Advert box in header can be used for more than advertising. Try "
 "adding player of the month or deal for the day."
 msgstr ""
 
-#: inc/options-output.php:123
+#: inc/options-output.php:126
 msgid ""
 "For cusomtizations you can reach out to the theme author on Github "
 "Issues tracker, linked above."
 msgstr ""
 
-#: inc/options-output.php:124
+#: inc/options-output.php:127
 msgid ""
 "Mobile menus should be well adjusted on all devices. If you find a "
 "particular browser/device that is looking odd, please open a new "
 "issue so we can update the theme."
 msgstr ""
 
-#: inc/options-output.php:125
+#: inc/options-output.php:128
 msgid ""
 "Base background color for top bars and footer has white text. Be "
 "sure to compensate by using darker backgrounds."
 msgstr ""
 
-#: inc/options-output.php:126
+#: inc/options-output.php:129
 msgid ""
 "Title on Front Page template is hidden. To show title edit out "
 "line 1148 in the stylesheet."
 msgstr ""
 
-#: inc/options-output.php:128
+#: inc/options-output.php:131
 msgid "Theme by TradeSouthWest https://tradesouthwest.com"
 msgstr ""
 
-#: inc/options-output.php:129
+#: inc/options-output.php:132
 msgid "ver 1.0.0"
 msgstr ""

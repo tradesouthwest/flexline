@@ -18,11 +18,9 @@ get_header(); ?>
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope 
         itemtype="https://schema.org/Article">
         <div class="inner-content">
-        <header class="excerpt-heading" style="background-image: url(<?php echo get_the_post_thumbnail_url($post->ID, 'thumbnail'); ?>)">
-        <h2><?php the_title(
-            sprintf( '<span class="post-title"><a href="%s" rel="bookmark">', 
-            esc_attr( esc_url( get_permalink() ) ) 
-        ), '</a></span>' ); ?></h2>
+
+        <header class="excerpt-heading" <?php do_action('flexline_header_img'); ?>>
+            <?php do_action( 'flexline_post_title' ); ?>
         </header>
             <div class="page-content with-excerpt">
 

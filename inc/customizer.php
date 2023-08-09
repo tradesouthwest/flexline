@@ -34,6 +34,7 @@ function flexline_register_theme_customizer_setup($wp_customize)
      $wp_customize->add_setting( 
         'flexline_fontfamily', array(
 		'default' => 'abel',
+		'sanitize_callback' => 'sanitize_text_field',
 		'transport' => 'refresh'
 	));
 	$wp_customize->add_control( 'flexline_fontfamily', array(
@@ -53,6 +54,7 @@ function flexline_register_theme_customizer_setup($wp_customize)
 	// Add setting & control for logo height
     $wp_customize->add_setting( 'flexline_logosize', array(
 		'default' => '100',
+		'sanitize_callback' => 'sanitize_text_field',
 		'transport' => $transport
 	));
 	$wp_customize->add_control( 'flexline_logosize', array(
@@ -66,6 +68,7 @@ function flexline_register_theme_customizer_setup($wp_customize)
 	// Add setting & control for text in header
 	$wp_customize->add_setting( 'flexline_desctext', array(
 		'default' => '',
+		'sanitize_callback' => 'wp_kses_post',
 		'transport' => $transport
 	));
 	$wp_customize->add_control( 'flexline_desctext', array(
@@ -79,6 +82,7 @@ function flexline_register_theme_customizer_setup($wp_customize)
 	// Add setting & control for excerpt length
     $wp_customize->add_setting( 'flexline_excerpt_leng', array(
 		'default' => '65',
+		'sanitize_callback' => 'sanitize_text_field',
 		'transport' => $transport
 	));
 	$wp_customize->add_control( 'flexline_excerpt_leng', array(
@@ -106,7 +110,22 @@ function flexline_register_theme_customizer_setup($wp_customize)
 			'settings' => 'flexline_bkgrnds_color'
 		) ) 
 	);
-   
+    $wp_customize->add_setting(
+		'flexline_gentext_color', array(
+		'default'           => '#474849',
+		'sanitize_callback' => 'sanitize_hex_color',
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'transport'         => 'refresh'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+		$wp_customize,
+		'flexline_gentext_color',
+		array('label'  => __( 'Color for General Text', 'flexline' ),
+			'section'  => 'colors',
+			'settings' => 'flexline_gentext_color'
+		) ) 
+	);
     $wp_customize->add_setting(
 		'flexline_anchor_color', array(
 		'default'           => '#5d7900',

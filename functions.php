@@ -46,6 +46,12 @@ add_action( 'flexline_description_header', 'flexline_description_header_text' );
 add_action( 'flexline_single_meta_footer', 'flexline_single_meta_footer_render' );
 // A9
 add_action( 'flexline_check_pagination', 'flexline_check_pagination_pre' );
+// A10
+add_action( 'flexline_header_img',       'flexline_header_background_img' );
+// A11
+add_action( 'flexline_archive_title',    'flexline_archive_title_render' );
+// A12
+add_action( 'flexline_post_title',       'flexline_post_title_render' );
 
 if ( ! function_exists( 'wp_body_open' ) ) {
     /**
@@ -157,30 +163,12 @@ function flexline_theme_enqueue_styles() {
 		get_stylesheet_uri() 
 	);
     
-    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+    if ( is_singular() && comments_open() ) {
 		wp_enqueue_script( 
 			'comment-reply' 
 		);
 	}
-
- /*   wp_enqueue_script( 
-		'flexline-menu', 
-		get_template_directory_uri() . '/rels/flexline-menu.js', 
-		array(), 
-		$ver, 
-		true 
-	); 
-
-	wp_localize_script(
-		'flexline-script',
-		'screenReaderText',
-		array(
-			'expand'   => __( 'expand child menu', 'flexline' ),
-			'collapse' => __( 'collapse child menu', 'flexline' ),
-		)
-	); */
 }
-
 
 /** 
  * Registers an editor stylesheet for the theme.
@@ -304,15 +292,15 @@ require get_template_directory() . '/inc/options-output.php';
 
 
 /** @A7
- * Render text below description in header.
+ * Render text above description in header.
  * @since 1.0.0 
  * @return HTML
  */
 function flexline_description_header_text(){
 	$htm = '';
-    $desctext = ( empty( get_theme_mod( 'flexline_desctext' ) ) ) ? 'hello' 
+    $desctext = ( empty( get_theme_mod( 'flexline_desctext' ) ) ) ? '' 
                       : get_theme_mod( 'flexline_desctext' );
-    $htm .= '<div class="descript-text">' . $desctext . '</div>';
+    $htm .= '<div class="descript-text">' . wp_kses_post( $desctext ) . '</div>';
     echo $htm;
 }
 
@@ -327,11 +315,12 @@ function flexline_adjustable_excerpts_length() {
 	// flexline_excerpt_leng
 	$leng = ( empty( get_theme_mod( 'flexline_excerpt_leng' ) ) ) ? '65' 
 		   : absint( get_theme_mod( 'flexline_excerpt_leng' ) );
-		   
-	echo wp_trim_words( get_the_content(), $leng, '
-		<a class="readon" href="' . get_the_permalink() . '" 
-	   	title="'. esc_attr__( 'Read Full Article', 'flexline' ) . '"><span class="read-on"> &hellip; </span></a>' 
-    ); 
+
+	echo wp_kses_post( wp_trim_words( get_the_content(), absint( $leng ),
+	    '&nbsp;<a class="readon" href="' . get_the_permalink() . '" 
+	   	title="'. esc_attr__( 'Read Full Article', 'flexline' ) . '">
+		<span class="read-on"> &hellip; </span></a>' ) 
+	); 
 } 
 
 /** #A8
@@ -379,3 +368,59 @@ function flexline_check_pagination_pre()
 		echo '';
 	}
 } 
+
+/** #A10
+ * Render background style to heading of excerpt with featured image.
+ *
+ * @since 1.0.0
+ * @return HTML
+ */
+function flexline_header_background_img()
+{
+	$thumb = get_the_post_thumbnail_url( absint( $post->ID ), 'thumbnail' );
+	echo 'style="background-image: url( ' . esc_url($thumb) . ' ); "'; 
+}
+
+/** #A10
+ * Render style to heading of archive excerpt.
+ *
+ * @since 1.0.0
+ * @return HTML
+ */
+function flexline_archive_title_render()
+{
+
+	$title = the_title('','',false);
+	if (empty($title)) { 
+    	echo '<h4><a href="'. esc_url( get_permalink() )  .'" rel="bookmark"># ' 
+    	. esc_html( get_the_ID() . ' ' . get_the_date() ) . '</a></h4>'; 
+	} else { 
+    	the_title( sprintf( '<h4><span class="post-title"><a href="%s" rel="bookmark">', 
+            esc_url( get_permalink() ) 
+		    ), 
+            '</a></span></h4>' 
+		);
+	}
+	
+} 
+
+/** #A10
+ * Render style to heading of blog posts.
+ *
+ * @since 1.0.0
+ * @return HTML
+ */
+function flexline_post_title_render()
+{
+
+	$title = the_title('','',false);
+	if (empty($title)) { 
+    	echo '<h2><a href="'. esc_url( get_permalink() )  .'" rel="bookmark"># ' 
+    	. esc_html( get_the_ID() ) . '</a></h2>'; 
+	} else { 
+    	echo '<h2 class="post-title"><a href="'. esc_url( get_permalink() ) .'" 
+		          title="'. esc_attr( get_the_title() ) .'"><span>'. esc_html( get_the_title() ) .'</span></a>
+                <sub><small class="h2date">' . esc_html( get_the_date() ) . '</small></sub></h2>';
+	}
+	
+}  

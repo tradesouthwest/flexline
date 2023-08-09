@@ -46,12 +46,14 @@ function flexline_theme_options_help_page() {
 function flexline_theme_customizer_css() 
 {   
     $fnt = $css = $font = ''; 
-    $ankr_colr  = '#5d7900'; $bkgs_colr = '#fafafa';
+    $ankr_colr  = '#5d7900'; $bkgs_colr = '#fafafa'; $gent_colr = '#474849';
     $uria  = get_stylesheet_directory_uri() . '/rels/abel-latin-400-normal.woff2';
     $urib  = get_stylesheet_directory_uri() . '/rels/bruno-ace-latin-400-normal.woff';
     $uric  = get_stylesheet_directory_uri() . '/rels/bruno-ace-latin-400-normal.woff2';
     
     if( get_theme_mods() ) : 
+    $gent_colr  = ( empty( get_theme_mod( 'flexline_gentext_color' ) ) ) ? '#474849' 
+                         : get_theme_mod( 'flexline_gentext_color' );
     $ankr_colr  = ( empty( get_theme_mod( 'flexline_anchor_color' ) ) ) ? '#5d7900' 
                          : get_theme_mod( 'flexline_anchor_color' );
     $bkgs_colr  = ( empty( get_theme_mod( 'flexline_bkgrnds_color' ) ) ) ? '#fafafa' 
@@ -73,15 +75,16 @@ function flexline_theme_customizer_css()
         $font .= 'body, button, input, select, textarea{font-family: "Bruno Ace", sans-serif;font-size:14px;color: #606060;}@media only screen and (min-width: 768px){.nav ul.sub-menu{margin-top: 1em;}}';
     } 
     if( $fnt == 'default' ) { 
-        $font .= 'body, button, input, select, textarea, .h1{font-family: "Segoe UI", Verdana, sans-serif;font-size:16px;}@media only screen and (min-width: 768px){.nav ul.sub-menu{margin-top: 1.168em;}}';
+        $font .= 'body, button, input, select, textarea, .h1{font-family: Arial, Helvetica, Verdana, "Segoe UI", sans-serif; font-size:16px;}
+            @media only screen and (min-width: 768px){.nav ul.sub-menu{margin-top: 1.168em;}}';
     }
     if( $fnt == 'roman' ) { 
-        $font .= 'body, button, input, select, textarea, .h1{font-family: Georgia, Roman, serif;font-size: 15px;}';
+        $font .= 'body, button, input, select, textarea, .h1{font-family: "Times-Roman", "Times New Roman", Times, serif, Georgia, Roman;font-size: 15px;}';
     } 
 
     /* use above set values into inline styles */
-    $css .= $font . 'a:not(.nav a),.current_page_item a,.current_page_ancestor a, h2:not(.widget-title){color: '. sanitize_hex_color($ankr_colr) . '}.nav li.menu-item-has-children,.nav li.menu-item-has-children:after{border-color: '. sanitize_hex_color($ankr_colr) . '}
-    .header-logo img{height: ' . flexline_sanitize_integer( $logo ) . 'px;}.header,.footer,.nav a{background: ' . sanitize_hex_color( $bkgs_colr ) . '}.current_page_item a, .current_page_ancestor a{background: transparent;}';
+    $css .= $font . 'body, button, input, select, textarea, p{color: '. esc_attr( $gent_colr ) .';}a:not(.nav a),.current_page_item a,.current_page_ancestor a, h2:not(.widget-title){color: '. sanitize_hex_color($ankr_colr) . '}.nav li.menu-item-has-children,.nav li.menu-item-has-children:after{border-color: '. sanitize_hex_color($ankr_colr) . '}
+    .header-logo img{height: ' . flexline_sanitize_integer( $logo ) . 'px;}.header,.footer,.nav a{background: ' . sanitize_hex_color( $bkgs_colr ) . '}.current_page_item a, .current_page_ancestor a{background: rgba(252,252,252, .8);}';
     
     wp_register_style( 'flexline-inline-customizer', true );
 	wp_enqueue_style( 'flexline-inline-customizer' );

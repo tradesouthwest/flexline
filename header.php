@@ -9,7 +9,7 @@
  */
 
 ?><!DOCTYPE html>
-<html>
+<html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +20,7 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?><a class="skip-link screen-reader-text" href="#sitecontent"><?php _e( 'Skip to content', 'classicsixteen' ); ?></a> 
+<?php wp_body_open(); ?><a class="skip-link screen-reader-text" href="#sitecontent"><?php esc_html_e( 'Skip to content', 'flexline' ); ?></a> 
 <div class="wrapper">
     <header class="header">
         <div class="header-wrap">
@@ -52,7 +52,7 @@
                             <?php endif; ?>
         
                             <div class="site-description">
-                                <?php echo get_bloginfo( 'description', 'display' ); ?>
+                                <?php echo esc_textarea( get_bloginfo( 'description', 'display' ) ); ?>
                             </div>
                         </div>
                     </div>
@@ -67,9 +67,9 @@
                 array(
                     'theme_location' => 'primary-menu',
                     'menu_class' => 'page-nav',
-                    //'walker' => new Fastbreak_Wrap(),
                 )
             );
             ?>
+            
             </div>
         </nav>
