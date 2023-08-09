@@ -52,6 +52,8 @@ add_action( 'flexline_header_img',       'flexline_header_background_img' );
 add_action( 'flexline_archive_title',    'flexline_archive_title_render' );
 // A12
 add_action( 'flexline_post_title',       'flexline_post_title_render' );
+// A13
+add_action( 'flexline_comment_login',    'flexline_comment_login_arguments' );
 
 if ( ! function_exists( 'wp_body_open' ) ) {
     /**
@@ -380,7 +382,7 @@ function flexline_header_background_img()
 	echo 'style="background-image: url( ' . esc_url($thumb) . ' ); "'; 
 }
 
-/** #A10
+/** #A11
  * Render style to heading of archive excerpt.
  *
  * @since 1.0.0
@@ -403,7 +405,7 @@ function flexline_archive_title_render()
 	
 } 
 
-/** #A10
+/** #A12
  * Render style to heading of blog posts.
  *
  * @since 1.0.0
@@ -422,4 +424,24 @@ function flexline_post_title_render()
                 <sub><small class="h2date">' . esc_html( get_the_date() ) . '</small></sub></h2>';
 	}
 	
-}  
+}
+
+/** #A13
+ * Render style to comment login for single blog posts.
+ *
+ * @since 1.0.0
+ * @return HTML
+ */
+function flexline_comment_login_arguments()
+{
+	$wurl = wp_login_url( apply_filters( 'the_permalink', esc_url(get_permalink()) ) );
+    $comment_args = array(
+        'label_submit'     => esc_attr__( 'Send', 'flexline' ),
+        'title_reply'       => esc_attr__( 'Write a Reply or Comment', 'flexline' ),
+        'comment_field'      => '<p class="comment-form-comment"><label for="comment">'. esc_attr__( 'Respond', 'flexline' ) . '<span class="screen-reader-text">' . esc_html__( 'Comment textarea box', 'flexline' ) . '</label><br /><textarea id="comment" name="comment" aria-required="true"></textarea></p>',
+        'must_log_in'         => '<p class="must-log-in">'. esc_html__( 'You must be ', 'flexline' ) . '<a href="'. esc_url($wurl) .'">'. esc_html__( 'logged in ', 'flexline' ) .'</a>'. esc_html__( 'to post a comment.', 'flexline' ) .'</p>',
+        'comment_notes_before' => '<p class="comment-notes">' . esc_html__( 'Your email address will not be published.', 'flexline' ) . '</p>'
+    );
+    
+	return comment_form( $comment_args );
+} 
