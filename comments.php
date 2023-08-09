@@ -40,30 +40,24 @@ if ( post_password_required() )
 <?php 
     $wurl = wp_login_url( apply_filters( 'the_permalink', esc_url(get_permalink()) ) );
     $comment_args = array(
-    // Change the title of send button
-    'label_submit' => esc_attr__( 'Send', 'flexline' ),
-
-    // Change the title of the reply section
-    'title_reply' => esc_attr__( 'Write a Reply or Comment', 'flexline' ),
-
-    // Redefine default textarea (the comment body).
-    'comment_field' => '<p class="comment-form-comment"><label for="comment">'
-        . esc_attr__( 'Respond', 'flexline' )
-        . '<span class="screen-reader-text">'
-        . esc_html__( 'Comment textarea box', 'flexline' ) . '</label>
-        <br /><textarea id="comment" name="comment" aria-required="true">
-        </textarea></p>',
-
-    //logged in check
-    'must_log_in' => '<p class="must-log-in">'
-        . esc_html__( 'You must be ', 'flexline' ) . '<a href="'. esc_url($wurl) 
-        .'">'. esc_html__( 'logged in ', 'flexline' ) .'</a>'
-        . esc_html__( 'to post a comment.', 'flexline' ) .'</p>',
-
-
-    'comment_notes_before' => '<p class="comment-notes">' .
-        esc_html__( 'Your email address will not be published.', 'flexline' ) 
-        . '</p>',
-
-);
-                comment_form( $comment_args ); ?>
+            // Change the title of send button
+            'label_submit' => esc_attr__( 'Send', 'flexline' ),
+            // Change the title of the reply section
+            'title_reply' => esc_attr__( 'Write a Reply or Comment', 'flexline' ),
+            // Redefine default textarea (the comment body).
+            'comment_field' => '<p class="comment-form-comment"><label for="comment">'
+                . esc_attr__( 'Respond', 'flexline' )
+                . '<span class="screen-reader-text">'
+                . esc_html__( 'Comment textarea box', 'flexline' ) . '</label>
+                <br /><textarea id="comment" name="comment" aria-required="true">
+                </textarea></p>',
+            //logged in check
+            'must_log_in' => '<p class="must-log-in">'
+                . esc_html__( 'You must be ', 'flexline' ) . '<a href="'. esc_url($wurl) 
+                .'">'. esc_html__( 'logged in ', 'flexline' ) .'</a>'
+                . esc_html__( 'to post a comment.', 'flexline' ) .'</p>',
+            'comment_notes_before' => '<p class="comment-notes">' .
+                esc_html__( 'Your email address will not be published.', 'flexline' ) 
+                . '</p>',
+        );
+    comment_form( $comment_args ); ?> 

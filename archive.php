@@ -20,12 +20,11 @@ get_header(); ?>
     
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope 
         itemtype="https://schema.org/Article">
-        <div class="inner-content">
+        <div class="inner-content archives-content">
         <header>
-        <h2><?php the_title(
-            sprintf( '<span class="post-title"><a href="%s" rel="bookmark">', 
-            esc_attr( esc_url( get_permalink() ) ) 
-        ), '</a></span>' ); ?></h2>
+
+            <?php do_action( 'flexline_archive_title' ); ?>
+            
         </header>
             <div class="page-content">
                 <?php the_excerpt(); ?>
