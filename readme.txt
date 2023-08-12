@@ -4,7 +4,7 @@ Contributors: Tradesouthwest
 Requires PHP: 7.4
 Requires CP:  1.4
 Tested up to: 1.6
-Version:      1.0.3
+Version:      1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, left-sidebar, three-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, threaded-comments, translation-ready, blog
