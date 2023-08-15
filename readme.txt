@@ -30,3 +30,5 @@ Excerpts show in featured image area above post.
 4. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 == Changelog ==
+= 1.0.1
+* original release

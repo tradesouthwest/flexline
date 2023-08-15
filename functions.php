@@ -170,6 +170,14 @@ function flexline_theme_enqueue_styles() {
 			'comment-reply' 
 		);
 	}
+
+	wp_enqueue_script( 
+		'flexline-mobile', 
+		get_template_directory_uri() . '/rels/flexline-mobile.js', 
+		array(), 
+		$ver, 
+		true 
+	);
 }
 
 /** 
@@ -373,11 +381,11 @@ function flexline_check_pagination_pre()
 /** #A10
  * Render background style to heading of excerpt with featured image.
  *
- * @since 1.0.0
+ * @since 1.0.1
  * @return HTML
  */
 function flexline_header_background_img()
-{
+{   global $post;
 	$thumb = get_the_post_thumbnail_url( absint( $post->ID ), 'thumbnail' );
 	echo 'style="background-image: url( ' . esc_url($thumb) . ' ); "'; 
 }

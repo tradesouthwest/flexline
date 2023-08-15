@@ -372,6 +372,17 @@ margin-left:0;
   background: #cde;
   border-bottom: thin dotted #000
 }
+#mobile_menu{
+  display: flex;
+}
+.nav-button{
+  display:flex;
+  height: 50px;
+  padding: 15px;
+  cursor: pointer;
+  margin: .5em .5em -2em auto;
+  display:none;
+}
 /* ************************************************************ 3 - Elements 
 */
 .screen-reader-text {
@@ -651,7 +662,12 @@ textarea#comment,
   .nav li.menu-item-has-children:hover + .menu-item-has-children:after{
     opacity: .1
   }
-
+  #mobile_menu{
+    display:none;
+  }
+  .nav-button{
+    display: flex;
+  }
   .site-title{font-size:1.318rem}
   .header-logo img{
     transform:scale(.75)

@@ -60,16 +60,20 @@
     </header>
 
         <nav class="nav">
-					
-            <div id="togmenu" class="nav-list" style="display: flex">
-            <?php
-            wp_nav_menu(
-                array(
-                    'theme_location' => 'primary-menu',
-                    'menu_class' => 'page-nav',
-                )
-            );
-            ?>
-            
+			
+            <div id="togmenu" class="nav-list">
+                <div id="mobile_menu" class="nav-wrapper" style="">
+                    <?php
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'primary-menu',
+                            'menu_class' => 'page-nav',
+                        )
+                    );
+                    ?>
+                </div>
             </div>
+            <input id="nav_mobi" type="button" class="nav-button" role="button" 
+            value=" | | | " onclick="openMenu();">
+            
         </nav>
